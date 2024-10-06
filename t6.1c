@@ -5,6 +5,11 @@ pipeline {
         EMAIL_RECIPIENT = 'aswalakshat05@gmail.com'
     }
 
+    triggers {
+        // Poll the GitHub repository for changes every 2 minutes
+        pollSCM('H/2 * * * *')
+    }
+
     stages {
         stage('Build') {
             steps {
